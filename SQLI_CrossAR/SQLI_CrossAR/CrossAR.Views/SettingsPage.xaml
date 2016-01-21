@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SQLI_CrossAR.CrossAR.Views.SettingsPage">
+
+  <StackLayout Orientation="Vertical">
+    <Label x:Name="settingsRayTxt" Text="Rayon de recherche : "  />
+    <Slider x:Name="sliderRayon" Minimum="0" Maximum="15" Value="1"/>
+    <Label x:Name="settingsCatTxt" Text="Catégorie de recherche"  />
+    <Picker x:Name="pickerCat" VerticalOptions="LayoutOptions.CenterAndExpand"/>
+  </StackLayout>
+</ContentPage>

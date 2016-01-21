@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<local:BaseView xmlns="http://xamarin.com/schemas/2014/forms"
+          xmlns:local="clr-namespace:SQLI_CrossAR.CrossAR.Views"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SQLI_CrossAR.CrossAR.Views.CameraView">
+  <local:BaseView.Content>
+
+  </local:BaseView.Content>
+</local:BaseView>

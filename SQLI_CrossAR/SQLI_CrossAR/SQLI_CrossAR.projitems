@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Label="SharedProjectFile_SccProperties">
+    <SharedProjectFile_ProjectGuid>{c0f58ef9-00d2-4dbf-8b8c-9b0b883e85f3}</SharedProjectFile_ProjectGuid>
+    <SharedProjectFile_SccProjectName>SAK</SharedProjectFile_SccProjectName>
+    <SharedProjectFile_SccAuxPath>SAK</SharedProjectFile_SccAuxPath>
+    <SharedProjectFile_SccLocalPath>SAK</SharedProjectFile_SccLocalPath>
+    <SharedProjectFile_SccProvider>SAK</SharedProjectFile_SccProvider>
+  </PropertyGroup>
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>10cd69b8-4144-4de8-8095-0eae87f3c337</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>SQLI_CrossAR</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)App.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)CrossAR.Algorithm\GetDeviceOrientation.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)CrossAR.Algorithm\MathsHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)CrossAR.Algorithm\IDeviceOrientation.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)CrossAR.Algorithm\Matrix.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)CrossAR.Algorithm\Quaternion.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)CrossAR.Algorithm\Vector3D.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)CrossAR.Algorithm\Viewport.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)CrossAR.DataAccess\DAO\DAOPointInteret.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)CrossAR.DataAccess\DAO\DAOTransfert.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)CrossAR.DataAccess\DB\DBImpl.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)CrossAR.DataAccess\DB\SQLite.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)CrossAR.DataAccess\DB\Tables\PI_DB.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)CrossAR.Hardware\Sensors\Abstraction\DeviceSensorDelay.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)CrossAR.Hardware\Sensors\Abstraction\DeviceSensorType.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)CrossAR.Hardware\Sensors\Abstraction\DeviceSensorValues.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)CrossAR.Hardware\Sensors\Abstraction\IDeviceSensor.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)CrossAR.Models\NearbyQuery.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)CrossAR.Models\PointInteret.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)CrossAR.Services\GeoLocatorService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)CrossAR.Services\GoogleWebService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)CrossAR.Services\IOrientationDependancyService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)CrossAR.Services\NavigationService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)CrossAR.ViewModels\BaseViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)CrossAR.ViewModels\CameraViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)CrossAR.ViewModels\NearbyViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)CrossAR.ViewModels\OrientationViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)CrossAR.ViewModels\PIDetailViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)CrossAR.ViewModels\PIListViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)CrossAR.ViewModels\RootViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)CrossAR.ViewModels\SettingsViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)CrossAR.ViewModels\SplashViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)CrossAR.Views\BaseView.xaml.cs">
+      <DependentUpon>BaseView.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)CrossAR.Views\CameraView.xaml.cs">
+      <DependentUpon>CameraView.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)CrossAR.Views\MapPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)CrossAR.Views\NearbyPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)CrossAR.Views\PIDetailView.xaml.cs">
+      <DependentUpon>PIDetailView.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)CrossAR.Views\PIListView.xaml.cs">
+      <DependentUpon>PIListView.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)CrossAR.Views\SettingsPage.xaml.cs">
+      <DependentUpon>SettingsPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)CrossAR.Views\SplashView.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)CrossAR.Views\TabPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Utils\Constantes.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Utils\IAppLifeCycle.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Utils\PaletteDesign.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Utils\Settings.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)CrossAR.Views\BaseView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)CrossAR.Views\CameraView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)CrossAR.Views\PIListView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)CrossAR.Views\PIDetailView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)CrossAR.Views\SettingsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:Maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
+             x:Class="SQLI_CrossAR.CrossAR.Views.PIDetailView">
+  
+  <StackLayout x:Name="mainStack" Orientation="Vertical" >
+
+    <!--Detail Information Cell-->
+    <StackLayout x:Name="imageTextStack" Orientation="Horizontal" Padding="5" HorizontalOptions="FillAndExpand">      
+      <Image x:Name="detailIconePI" Source="{Binding DetailImage}" />      
+      <StackLayout x:Name="textStack" Orientation="Vertical"  HorizontalOptions="StartAndExpand" >
+        <Label x:Name="detailTitleLabel"   Text = "{Binding TitleLabel}"   />
+        <Label x:Name="detailMessageLabel" Text = "{Binding Address}"      />
+        <Label x:Name="detailGPSInfoLabel" Text = "{Binding GPSInfoLabel}" />
+      </StackLayout>
+      <Button x:Name="btnFavoris" Text="Fav" />
+    </StackLayout>
+
+
+    
+    <StackLayout Orientation="Horizontal">
+      <!--Information Labels-->
+      <StackLayout x:Name="infoStack" Orientation="Vertical" >
+        <Label x:Name="detailAutreInfos" Text = "Autres Informations" />
+        <Label x:Name="detailItemInfo1"  Text = "{Binding ItemInfo1}" />
+        <Label x:Name="detailItemInfo2"  Text = "{Binding ItemInfo2}" />
+        <Label x:Name="detailItemInfo3"  Text = "{Binding ItemInfo3}" />
+        <Label x:Name="detailItemInfo4"  Text = "ItemInfo4" TextColor="#FFF" />
+        <Label x:Name="detailItemInfo5"  Text = "ItemInfo5" TextColor="#FFF" />
+        <Label x:Name="detailItemInfo6"  Text = "ItemInfo6" TextColor="#FFF" />
+      </StackLayout>
+      <Maps:Map WidthRequest="320" HeightRequest="15" x:Name="MyMap" IsShowingUser="true" MapType="Street"  VerticalOptions = "LayoutOptions.FillAndExpand"/>
+    </StackLayout>
+ 
+  </StackLayout>  
+</ContentPage>

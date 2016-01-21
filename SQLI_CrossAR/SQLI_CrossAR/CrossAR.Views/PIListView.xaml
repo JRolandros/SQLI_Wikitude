@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SQLI_CrossAR.CrossAR.Views.PIListView" >
+             
+  <StackLayout x:Name="mainStack" Orientation ="Vertical">
+    
+    <SearchBar x:Name="searchBar" Placeholder ="Search by name" />
+    
+     <ListView  x:Name="myListView" ItemsSource ="{Binding piList}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    
+                      <ViewCell>
+                        <StackLayout x:Name ="cellStack" Orientation="Horizontal">
+                           <Image Source="{Binding ImageSource}" />
+                            <StackLayout Orientation="Vertical">                               
+                                <Label x:Name="itemNom"       Text="{Binding Nom}"       TextColor="#212121" FontSize="16"/>
+                                <!--<Label x:Name="itemAdresse"   Text="{Binding Adresse}"   TextColor="#727272" FontSize="14"/>-->
+                                <!--<Label x:Name="itemCategorie" Text="{Binding Categorie}" TextColor="#727272" FontSize="14"/>-->
+                            </StackLayout>
+                        </StackLayout>
+                    </ViewCell>
+                
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+  </StackLayout>
+</ContentPage>
