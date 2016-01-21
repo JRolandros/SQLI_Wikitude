@@ -17,6 +17,8 @@ namespace SQLI_CrossAR.CrossAR.Algorithm
         public static readonly Vector3D Right = new Vector3D(1.0, 0.0, 0.0);
 
 
+
+
         public static readonly Vector3D Forward = new Vector3D(0.0, 0.0, -1.0);
         public static readonly Vector3D Backward = new Vector3D(0.0, 0.0, 1.0);
 
