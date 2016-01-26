@@ -13,6 +13,9 @@ using Xamarin.Forms;
 using Android.Hardware;
 using Xamarin.Forms.Platform.Android;
 using Android.Content.PM;
+using Wikitude.Architect;
+using SQLI_CrossAR.Utils;
+using System.ComponentModel;
 
 [assembly: ExportRenderer(typeof(SQLI_CrossAR.CrossAR.Views.CameraView), typeof(SQLI_CrossAR.Droid.DroidView.CameraView))]
 namespace SQLI_CrossAR.Droid.DroidView
@@ -24,7 +27,7 @@ namespace SQLI_CrossAR.Droid.DroidView
         TextureView _textureView;
         global::Android.Views.View view;
         CameraFacing cameraType;
-
+        private ArchitectView architectView;
 
         protected override void OnElementChanged(ElementChangedEventArgs<Page> e)
         {
@@ -38,9 +41,23 @@ namespace SQLI_CrossAR.Droid.DroidView
                 var activity = this.Context as Activity;
                 activity.RequestedOrientation = ScreenOrientation.Landscape;
                 view = activity.LayoutInflater.Inflate(Resource.Layout.CameraLayout, this, false);
-                _textureView = view.FindViewById<TextureView>(Resource.Id.textureView);
-                _textureView.SurfaceTextureListener = this;
-                cameraType = CameraFacing.Back;
+
+                //Find your Architect view from the layout you just used
+                architectView = view.FindViewById<ArchitectView>(Resource.Id.architectView);
+
+                //Activate the ArchitectView with your license and set the feature type
+                StartupConfiguration startupConfiguration = new StartupConfiguration(Constantes.WIKITUDE_SDK_KEY, StartupConfiguration.Features.Tracking2D);
+
+                //check if you config is supported by the target device
+                int requiredFeatures =StartupConfiguration.Features.Tracking2D;
+                if ((ArchitectView.getSupportedFeaturesForDevice(activity.ApplicationContext) & requiredFeatures) == requiredFeatures)
+                {
+                    architectView.OnCreate(startupConfiguration);
+                }
+
+                //_textureView = view.FindViewById<TextureView>(Resource.Id.textureView);
+                //_textureView.SurfaceTextureListener = this;
+                //cameraType = CameraFacing.Back;
                 AddView(view);
             }
             catch (Exception ex)
@@ -49,6 +66,14 @@ namespace SQLI_CrossAR.Droid.DroidView
             }
         }
 
+        /*
+        protected override void OnElementPropertyChanged(object sender, PropertyChangedEventArgs e)
+        {
+            base.OnElementPropertyChanged(sender, e);
+            //if (architectView != null)
+                //architectView.SetLocation(LATITUDE, LONGITUDE, ALTITUDE, ACCURACY);
+        }
+        */
         protected override void OnLayout(bool changed, int l, int t, int r, int b)
         {
             base.OnLayout(changed, l, t, r, b);
@@ -94,6 +119,22 @@ namespace SQLI_CrossAR.Droid.DroidView
         public void OnSurfaceTextureUpdated(Android.Graphics.SurfaceTexture surface)
         {
 
+        }
+
+
+        //protected override void OnDestroy()
+        //{
+        //    base.OnDestroy();
+
+        //    if (architectView != null)
+        //        architectView.OnDestroy();
+        //}
+
+        protected override void Dispose(bool disposing)
+        {
+            base.Dispose(disposing);
+            if (architectView != null)
+                architectView.OnDestroy();
         }
     }
 }

@@ -162,6 +162,9 @@
     <Reference Include="System.Transactions" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
+    <Reference Include="Wikitude.SDK">
+      <HintPath>..\..\Components\com.wikitude.xamarin.component-5.1.1\lib\ios-unified\Wikitude.SDK.dll</HintPath>
+    </Reference>
     <Reference Include="Xamarin.Forms.Core, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Xamarin.Forms.2.0.0.6490\lib\Xamarin.iOS10\Xamarin.Forms.Core.dll</HintPath>
       <Private>True</Private>
@@ -200,7 +203,12 @@
     <BundleResource Include="Resources\PI-grey.png" />
     <BundleResource Include="Resources\PI-pink.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <XamarinComponentReference Include="com.wikitude.xamarin.component">
+      <Visible>False</Visible>
+      <Version>5.1.1</Version>
+    </XamarinComponentReference>
+  </ItemGroup>
   <Import Project="..\SQLI_CrossAR\SQLI_CrossAR.projitems" Label="Shared" Condition="Exists('..\SQLI_CrossAR\SQLI_CrossAR.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <Import Project="..\..\packages\Xamarin.Forms.2.0.0.6490\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets" Condition="Exists('..\..\packages\Xamarin.Forms.2.0.0.6490\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets')" />
