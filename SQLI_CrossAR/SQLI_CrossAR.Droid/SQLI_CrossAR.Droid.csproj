@@ -170,6 +170,7 @@
     <Compile Include="Algorithm\DroidOrientation.cs" />
     <Compile Include="CrossAR.Hardware\Sensors\Implementation\Implementation.cs" />
     <Compile Include="DroidView\CameraView.cs" />
+    <Compile Include="DroidView\Wikitude.cs" />
     <Compile Include="Hardware\Sensors\Implementation\Implementation.cs" />
     <Compile Include="Helpers\Settings.cs" />
     <Compile Include="MainActivity.cs" />
@@ -191,6 +192,21 @@
     <AndroidResource Include="Resources\Drawable\Icon.png" />
   </ItemGroup>
   <ItemGroup>
+    <AndroidAsset Include="Assets\ARWorld\4_PointOfInterest_2_PoiWithLabel\index.html" />
+    <AndroidAsset Include="Assets\ARWorld\4_PointOfInterest_2_PoiWithLabel\assets\marker_idle.png" />
+    <AndroidAsset Include="Assets\ARWorld\4_PointOfInterest_2_PoiWithLabel\css\jquery-mobile-transparent-ui-overlay.css" />
+    <AndroidAsset Include="Assets\ARWorld\4_PointOfInterest_2_PoiWithLabel\jquery\jquery-1.9.1.min.js" />
+    <AndroidAsset Include="Assets\ARWorld\4_PointOfInterest_2_PoiWithLabel\jquery\jquery-mobile-transparent-ui-overlay.css" />
+    <AndroidAsset Include="Assets\ARWorld\4_PointOfInterest_2_PoiWithLabel\jquery\jquery.mobile-1.3.2.min.css" />
+    <AndroidAsset Include="Assets\ARWorld\4_PointOfInterest_2_PoiWithLabel\jquery\jquery.mobile-1.3.2.min.js" />
+    <AndroidAsset Include="Assets\ARWorld\4_PointOfInterest_2_PoiWithLabel\jquery\images\ajax-loader.gif" />
+    <AndroidAsset Include="Assets\ARWorld\4_PointOfInterest_2_PoiWithLabel\jquery\images\icons-18-black.png" />
+    <AndroidAsset Include="Assets\ARWorld\4_PointOfInterest_2_PoiWithLabel\jquery\images\icons-18-white.png" />
+    <AndroidAsset Include="Assets\ARWorld\4_PointOfInterest_2_PoiWithLabel\jquery\images\icons-36-black.png" />
+    <AndroidAsset Include="Assets\ARWorld\4_PointOfInterest_2_PoiWithLabel\jquery\images\icons-36-white.png" />
+    <AndroidAsset Include="Assets\ARWorld\4_PointOfInterest_2_PoiWithLabel\js\marker.js" />
+    <AndroidAsset Include="Assets\ARWorld\4_PointOfInterest_2_PoiWithLabel\js\poiwithlabel.js" />
+    <AndroidAsset Include="Assets\ARWorld\ade.js" />
     <Content Include="Properties\AndroidManifest.xml" />
     <AndroidResource Include="Resources\Drawable\PI_darkblue.png" />
     <AndroidResource Include="Resources\Drawable\PI_lightblue.png" />

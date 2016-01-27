@@ -26,8 +26,19 @@ namespace SQLI_CrossAR.Droid.DroidView
         Camera _camera;
         TextureView _textureView;
         global::Android.Views.View view;
+        private Activity activity;
         CameraFacing cameraType;
         private ArchitectView architectView;
+
+
+        public CameraView()
+        {
+            activity = this.Context as Activity;
+            activity.StartActivity(typeof(Wikitude));
+        }
+        
+        //wikitude world
+        private const string AR_WORLD_URL = "ARWorld/4_PointOfInterest_2_PoiWithLabel/index.html";
 
         protected override void OnElementChanged(ElementChangedEventArgs<Page> e)
         {
@@ -36,34 +47,34 @@ namespace SQLI_CrossAR.Droid.DroidView
             if (e.OldElement != null || Element == null)
                 return;
 
-            try
-            {
-                var activity = this.Context as Activity;
-                activity.RequestedOrientation = ScreenOrientation.Landscape;
-                view = activity.LayoutInflater.Inflate(Resource.Layout.CameraLayout, this, false);
+            //try
+            //{
+                
+            //    activity.RequestedOrientation = ScreenOrientation.Landscape;
+            //    view = activity.LayoutInflater.Inflate(Resource.Layout.CameraLayout, this, false);
 
-                //Find your Architect view from the layout you just used
-                architectView = view.FindViewById<ArchitectView>(Resource.Id.architectView);
+            //    //Find your Architect view from the layout you just used
+            //    architectView = view.FindViewById<ArchitectView>(Resource.Id.architectView);
 
-                //Activate the ArchitectView with your license and set the feature type
-                StartupConfiguration startupConfiguration = new StartupConfiguration(Constantes.WIKITUDE_SDK_KEY, StartupConfiguration.Features.Tracking2D);
+            //    //Activate the ArchitectView with your license and set the feature type
+            //    StartupConfiguration startupConfiguration = new StartupConfiguration(Constantes.WIKITUDE_SDK_KEY, StartupConfiguration.Features.Tracking2D);
 
-                //check if you config is supported by the target device
-                int requiredFeatures =StartupConfiguration.Features.Tracking2D;
-                if ((ArchitectView.getSupportedFeaturesForDevice(activity.ApplicationContext) & requiredFeatures) == requiredFeatures)
-                {
-                    architectView.OnCreate(startupConfiguration);
-                }
+            //    //check if you config is supported by the target device
+            //    int requiredFeatures =StartupConfiguration.Features.Tracking2D;
+            //    if ((ArchitectView.getSupportedFeaturesForDevice(activity.ApplicationContext) & requiredFeatures) == requiredFeatures)
+            //    {
+            //        architectView.OnCreate(startupConfiguration);
+            //    }
 
-                //_textureView = view.FindViewById<TextureView>(Resource.Id.textureView);
-                //_textureView.SurfaceTextureListener = this;
-                //cameraType = CameraFacing.Back;
-                AddView(view);
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
+            //    //_textureView = view.FindViewById<TextureView>(Resource.Id.textureView);
+            //    //_textureView.SurfaceTextureListener = this;
+            //    //cameraType = CameraFacing.Back;
+            //    AddView(view);
+            //}
+            //catch (Exception ex)
+            //{
+            //    Console.WriteLine(ex.Message);
+            //}
         }
 
         /*
@@ -81,33 +92,50 @@ namespace SQLI_CrossAR.Droid.DroidView
             var msw = MeasureSpec.MakeMeasureSpec(r - l, MeasureSpecMode.Exactly);
             var msh = MeasureSpec.MakeMeasureSpec(b - t, MeasureSpecMode.Exactly);
 
-            view.Measure(msw, msh);
-            view.Layout(0, 0, r - l, b - t);
+            //if (architectView != null)
+            //{
+            //    architectView.OnPostCreate();
+
+            //    try
+            //    {
+            //        architectView.Load(AR_WORLD_URL);
+            //    }
+            //    catch (Exception ex)
+            //    {
+            //        Console.WriteLine("WIKITUDE_SAMPLE", ex.ToString());
+            //    }
+            //}
+
+            //view.Measure(msw, msh);
+
+            //view.Layout(0, 0, r - l, b - t);
+
+            
         }
 
         public void OnSurfaceTextureAvailable(Android.Graphics.SurfaceTexture surface, int width, int height)
         {
             // var camInfo = new Camera.CameraInfo();
 
-            _camera = Camera.Open(0);
+            //_camera = Camera.Open(0);
 
-            // _camera = Camera.Open();
-            _textureView.LayoutParameters = new FrameLayout.LayoutParams(width, height);
-            try
-            {
-                _camera.SetPreviewTexture(surface);
-                _camera.StartPreview();
-            }
-            catch (Java.IO.IOException ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
+            //// _camera = Camera.Open();
+            //_textureView.LayoutParameters = new FrameLayout.LayoutParams(width, height);
+            //try
+            //{
+            //    _camera.SetPreviewTexture(surface);
+            //    _camera.StartPreview();
+            //}
+            //catch (Java.IO.IOException ex)
+            //{
+            //    Console.WriteLine(ex.Message);
+            //}
         }
 
         public bool OnSurfaceTextureDestroyed(Android.Graphics.SurfaceTexture surface)
         {
-            _camera.StopPreview();
-            _camera.Release();
+            //_camera.StopPreview();
+            //_camera.Release();
             return true;
         }
 
@@ -128,6 +156,25 @@ namespace SQLI_CrossAR.Droid.DroidView
 
         //    if (architectView != null)
         //        architectView.OnDestroy();
+        //}
+
+        //protected override void OnPostCreate(Bundle savedInstanceState)
+        //{
+        //    base.OnPostCreate(savedInstanceState);
+
+        //    if (architectView != null)
+        //    {
+        //        architectView.OnPostCreate();
+
+        //        try
+        //        {
+        //            architectView.Load(SAMPLE_WORLD_URL);
+        //        }
+        //        catch (Exception ex)
+        //        {
+        //            Console.WriteLine("WIKITUDE_SAMPLE", ex.ToString());
+        //        }
+        //    }
         //}
 
         protected override void Dispose(bool disposing)
